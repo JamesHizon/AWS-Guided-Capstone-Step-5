@@ -20,12 +20,19 @@ By the end of this step, I will:
 2. Knowledge of command line
 
 ### Outline of Steps:
-1. Preprocessing Workflow - Use a shell script to call a data ingestion Spark job.
-2. Use shell script to call an analytical ETL job.
-3. Job Status Tracking
-  a. Define a Job Status Table
-  b. Define a Job Management Class
-  c. Populate Job Status Table During the Job Run
+1. Use Shell Script to run both Run_Data_Ingestion.py and Run_Reporter_ETL.py scripts via ```spark-submit```.
+2. Create Tracker class which will be used to track the job status of the "Data Ingestion" job and store data into MySQL Database.
+3. Create Reporter class which will write desired output of Step 4 to desired location.
+
+### Issue:
+I was unable to SSH into EMR Cluster, nor create access and secret access keys based on AWS Educate account.
+Yet, I ended up instead trying to complete the work locally while researching what I would for real-world application.
+Basically, I can try to SSH into EMR Cluster to try and build a concurrent data orchestration pipeline using Amazon EMR and Apache Livy (which enables easy interaction w/ a Spark cluster over a REST interface). The cloud architecture would include AWS CloudFormation, where I build a CloudFormation stack that includes an Airflow instance, RDS Instance based on PostgreSQL, S3 bucket, and the Airflow instance would be triggered as needed for the EMR Cluster to run w/ Apache Spark and Apache Livy.
+
+The following is a link for more information: https://aws.amazon.com/blogs/big-data/build-a-concurrent-data-orchestration-pipeline-using-amazon-emr-and-apache-livy/
+
+
+
 
 
 
