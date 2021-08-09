@@ -23,6 +23,7 @@ By the end of this step, I will:
 1. Use Shell Script to run both Run_Data_Ingestion.py and Run_Reporter_ETL.py scripts via ```spark-submit```.
 2. Create Tracker class which will be used to track the job status of the "Data Ingestion" job and store data into MySQL Database.
 3. Create Reporter class which will write desired output of Step 4 to desired location.
+4. Use a separate Python script using ```configparser``` package to store and protect important information. This is highly important for real-world when I need to protect AWS credentials such as access and secret access keys.
 
 ### Issue:
 I was unable to SSH into EMR Cluster, nor create access and secret access keys based on AWS Educate account.
